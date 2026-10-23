@@ -1,0 +1,15 @@
+# Dependencies used by the original model-collection scripts and final analysis notebook.
+# This is an install list, not a lockfile with exact historical package versions.
+# Python 3.13 was used during project development.
+
+datasets
+groq
+python-dotenv
+numpy
+pandas
+scipy
+statsmodels
+matplotlib
+tabulate
+ipykernel
+IPython

@@ -1,0 +1,91 @@
+Question_Number,Benchmark_ID,Category,Reasoning_Type,Visual_Dependency,Notes
+11,114,Endocrine & Metabolic,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+12,128,Musculoskeletal & Rheumatology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+13,145,Renal & Urology,Diagnostic Test/Interpretation,No missing visual identified,"Provisional label review: Reasoning_Type: Mechanism/Pathophysiology -> Diagnostic Test/Interpretation; Question asks what a renal biopsy would show, not why nephrotic syndrome occurs."
+14,149,Infectious Disease & Immunology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+15,155,Pharmacology & Toxicology,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+16,160,Hematology & Oncology,Anatomy/Localization,Missing visual — likely essential,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+17,171,Obstetrics & Reproductive,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+18,178,Neurology & Psychiatry,Anatomy/Localization,No missing visual identified,Provisional manual label; medical-expert review recommended.
+19,196,Pharmacology & Toxicology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+20,198,Obstetrics & Reproductive,Mechanism/Pathophysiology,No missing visual identified,Provisional label review: Flag for review: Infertility context vs requested alternate drug indication; Obstetrics vs Pharmacology both defensible.
+21,202,Endocrine & Metabolic,Anatomy/Localization,No missing visual identified,Provisional manual label; medical-expert review recommended.
+22,203,Infectious Disease & Immunology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+23,211,Hematology & Oncology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+24,212,"Research, Ethics & Health Policy",Research/Ethics/Policy,No missing visual identified,Provisional manual label; medical-expert review recommended.
+25,215,Renal & Urology,Management/Treatment,No missing visual identified,Provisional label review: Flag for review: Diagnostic workup posed as next management step; check task taxonomy convention.
+26,222,Endocrine & Metabolic,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+27,231,Infectious Disease & Immunology,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+28,234,Hematology & Oncology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+29,237,Endocrine & Metabolic,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+30,238,"Research, Ethics & Health Policy",Research/Ethics/Policy,No missing visual identified,Provisional manual label; medical-expert review recommended.
+31,239,Musculoskeletal & Rheumatology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+32,241,Gastroenterology & Hepatology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+33,243,Pharmacology & Toxicology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+34,246,Infectious Disease & Immunology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+35,258,Pharmacology & Toxicology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+36,265,Cardiopulmonary,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+37,267,Hematology & Oncology,Genetics/Inheritance,No missing visual identified,Provisional manual label; medical-expert review recommended.
+38,271,Obstetrics & Reproductive,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+39,273,Gastroenterology & Hepatology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+40,284,Cardiopulmonary,Mechanism/Pathophysiology,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+41,285,Endocrine & Metabolic,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+42,303,Obstetrics & Reproductive,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+43,307,"Research, Ethics & Health Policy",Research/Ethics/Policy,No missing visual identified,Provisional manual label; medical-expert review recommended.
+44,321,Cardiopulmonary,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+45,329,Neurology & Psychiatry,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+46,336,Hematology & Oncology,Diagnosis/Identification,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+47,337,Cardiopulmonary,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+48,340,Neurology & Psychiatry,Management/Treatment,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+49,367,Obstetrics & Reproductive,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+50,380,Endocrine & Metabolic,Mechanism/Pathophysiology,No missing visual identified,Provisional label review: Flag for review: Diuretic-associated electrolyte physiology may be classified as pharmacology rather than endocrine/metabolic.
+51,413,Endocrine & Metabolic,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+52,423,Renal & Urology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+53,448,Cardiopulmonary,Management/Treatment,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+54,452,Infectious Disease & Immunology,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+55,454,Endocrine & Metabolic,Anatomy/Localization,Missing visual — likely essential,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+56,461,Renal & Urology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+57,477,Musculoskeletal & Rheumatology,Anatomy/Localization,No missing visual identified,Provisional manual label; medical-expert review recommended.
+58,480,Obstetrics & Reproductive,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+59,483,Gastroenterology & Hepatology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+60,485,Gastroenterology & Hepatology,Management/Treatment,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+61,497,Neurology & Psychiatry,Diagnosis/Identification,No missing visual identified,"Provisional label review: Reasoning_Type: Diagnostic Test/Interpretation -> Diagnosis/Identification; Question asks for an additional history feature supporting a clinical diagnosis, not for a test or interpretation."
+62,499,Obstetrics & Reproductive,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+63,501,Infectious Disease & Immunology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+64,514,Infectious Disease & Immunology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+65,524,Infectious Disease & Immunology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+66,531,Endocrine & Metabolic,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+67,560,Pharmacology & Toxicology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+68,564,Neurology & Psychiatry,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+69,579,Musculoskeletal & Rheumatology,Diagnostic Test/Interpretation,No missing visual identified,Provisional label review: Flag for review: Bone lesions associated with hyperparathyroidism: Musculoskeletal vs Endocrine/Metabolic.
+70,583,Renal & Urology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+71,587,Obstetrics & Reproductive,Diagnosis/Identification,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+72,596,Cardiopulmonary,Mechanism/Pathophysiology,No missing visual identified,Provisional label review: Flag for review: Inhaled nitric oxide adverse effect (methemoglobinemia): Cardiopulmonary vs Pharmacology/Toxicology.
+73,616,Renal & Urology,Mechanism/Pathophysiology,Missing visual — potentially relevant,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+74,627,Obstetrics & Reproductive,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+75,634,Renal & Urology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+76,651,Hematology & Oncology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+77,659,Hematology & Oncology,Diagnostic Test/Interpretation,No missing visual identified,Provisional manual label; medical-expert review recommended.
+78,663,Neurology & Psychiatry,Anatomy/Localization,No missing visual identified,Provisional manual label; medical-expert review recommended.
+79,664,Hematology & Oncology,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+80,665,Musculoskeletal & Rheumatology,Anatomy/Localization,No missing visual identified,Provisional label review: Flag for review: Check question-answer-option wording when discussing as a qualitative case; avoid automatic alteration of benchmark.
+81,670,Pharmacology & Toxicology,Mechanism/Pathophysiology,No missing visual identified,Provisional label review: Category: Infectious Disease & Immunology -> Pharmacology & Toxicology; Primary tested knowledge is chlorhexidine antiseptic mechanism of action rather than infectious disease diagnosis or immune response.
+82,676,Infectious Disease & Immunology,Mechanism/Pathophysiology,Missing visual — likely essential,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+83,677,"Research, Ethics & Health Policy",Management/Treatment,No missing visual identified,Provisional label review: Flag for review: Initial child-protection management: Research/Ethics/Policy vs clinical management is a category boundary.
+84,689,Infectious Disease & Immunology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+85,706,Pharmacology & Toxicology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+86,709,Renal & Urology,Diagnostic Test/Interpretation,Missing visual — likely essential,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+87,714,Cardiopulmonary,Diagnosis/Identification,No missing visual identified,Provisional manual label; medical-expert review recommended.
+88,720,Endocrine & Metabolic,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+89,724,Infectious Disease & Immunology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+90,748,Endocrine & Metabolic,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+91,755,Obstetrics & Reproductive,Diagnostic Test/Interpretation,No missing visual identified,Provisional label review: Flag for review: Evaluation of suspected pulmonary embolism during pregnancy: Obstetrics vs Cardiopulmonary.
+92,758,Cardiopulmonary,Mechanism/Pathophysiology,No missing visual identified,Provisional label review: Flag for review: Infective endocarditis associated with colon cancer: Cardiopulmonary vs Infectious Disease.
+93,764,"Research, Ethics & Health Policy",Research/Ethics/Policy,No missing visual identified,Provisional manual label; medical-expert review recommended.
+94,778,"Research, Ethics & Health Policy",Research/Ethics/Policy,No missing visual identified,Provisional manual label; medical-expert review recommended.
+95,784,Obstetrics & Reproductive,Diagnostic Test/Interpretation,No missing visual identified,Provisional label review: Flag for review: Prenatal screening question framed as next management step: diagnostic testing vs management label.
+96,785,Hematology & Oncology,Anatomy/Localization,Missing visual — likely essential,Provisional label review: Visual reference in text; original image/figure is not part of the exported text-only dataset.
+97,791,Infectious Disease & Immunology,Mechanism/Pathophysiology,No missing visual identified,"Provisional label review: Flag for review: Asks for associated viral manifestation, which is not strictly a molecular mechanism; task label may need change."
+98,803,Neurology & Psychiatry,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.
+99,822,Gastroenterology & Hepatology,Mechanism/Pathophysiology,No missing visual identified,Provisional manual label; medical-expert review recommended.
+100,829,Infectious Disease & Immunology,Management/Treatment,No missing visual identified,Provisional manual label; medical-expert review recommended.

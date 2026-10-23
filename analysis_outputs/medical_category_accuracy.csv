@@ -1,0 +1,78 @@
+Category,Method,N,Correct,Accuracy
+Cardiopulmonary,Direct baseline,8,2,0.25
+Cardiopulmonary,Structured prompting,8,3,0.375
+Cardiopulmonary,Critic-guided refinement,8,4,0.5
+Cardiopulmonary,Self-Consistency,8,2,0.25
+Cardiopulmonary,1 agent + judge,8,3,0.375
+Cardiopulmonary,2 agents + judge,8,3,0.375
+Cardiopulmonary,3 agents + judge,8,3,0.375
+Endocrine & Metabolic,Direct baseline,11,4,0.36363636363636365
+Endocrine & Metabolic,Structured prompting,11,4,0.36363636363636365
+Endocrine & Metabolic,Critic-guided refinement,11,4,0.36363636363636365
+Endocrine & Metabolic,Self-Consistency,11,5,0.45454545454545453
+Endocrine & Metabolic,1 agent + judge,11,4,0.36363636363636365
+Endocrine & Metabolic,2 agents + judge,11,4,0.36363636363636365
+Endocrine & Metabolic,3 agents + judge,11,5,0.45454545454545453
+Gastroenterology & Hepatology,Direct baseline,5,1,0.2
+Gastroenterology & Hepatology,Structured prompting,5,2,0.4
+Gastroenterology & Hepatology,Critic-guided refinement,5,2,0.4
+Gastroenterology & Hepatology,Self-Consistency,5,1,0.2
+Gastroenterology & Hepatology,1 agent + judge,5,3,0.6
+Gastroenterology & Hepatology,2 agents + judge,5,2,0.4
+Gastroenterology & Hepatology,3 agents + judge,5,2,0.4
+Hematology & Oncology,Direct baseline,9,6,0.6666666666666666
+Hematology & Oncology,Structured prompting,9,6,0.6666666666666666
+Hematology & Oncology,Critic-guided refinement,9,6,0.6666666666666666
+Hematology & Oncology,Self-Consistency,9,6,0.6666666666666666
+Hematology & Oncology,1 agent + judge,9,4,0.4444444444444444
+Hematology & Oncology,2 agents + judge,9,6,0.6666666666666666
+Hematology & Oncology,3 agents + judge,9,5,0.5555555555555556
+Infectious Disease & Immunology,Direct baseline,13,4,0.3076923076923077
+Infectious Disease & Immunology,Structured prompting,13,7,0.5384615384615384
+Infectious Disease & Immunology,Critic-guided refinement,13,9,0.6923076923076923
+Infectious Disease & Immunology,Self-Consistency,13,9,0.6923076923076923
+Infectious Disease & Immunology,1 agent + judge,13,8,0.6153846153846154
+Infectious Disease & Immunology,2 agents + judge,13,8,0.6153846153846154
+Infectious Disease & Immunology,3 agents + judge,13,8,0.6153846153846154
+Musculoskeletal & Rheumatology,Direct baseline,5,3,0.6
+Musculoskeletal & Rheumatology,Structured prompting,5,4,0.8
+Musculoskeletal & Rheumatology,Critic-guided refinement,5,3,0.6
+Musculoskeletal & Rheumatology,Self-Consistency,5,3,0.6
+Musculoskeletal & Rheumatology,1 agent + judge,5,4,0.8
+Musculoskeletal & Rheumatology,2 agents + judge,5,4,0.8
+Musculoskeletal & Rheumatology,3 agents + judge,5,3,0.6
+Neurology & Psychiatry,Direct baseline,7,2,0.2857142857142857
+Neurology & Psychiatry,Structured prompting,7,5,0.7142857142857143
+Neurology & Psychiatry,Critic-guided refinement,7,4,0.5714285714285714
+Neurology & Psychiatry,Self-Consistency,7,3,0.42857142857142855
+Neurology & Psychiatry,1 agent + judge,7,4,0.5714285714285714
+Neurology & Psychiatry,2 agents + judge,7,4,0.5714285714285714
+Neurology & Psychiatry,3 agents + judge,7,4,0.5714285714285714
+Obstetrics & Reproductive,Direct baseline,11,5,0.45454545454545453
+Obstetrics & Reproductive,Structured prompting,11,3,0.2727272727272727
+Obstetrics & Reproductive,Critic-guided refinement,11,6,0.5454545454545454
+Obstetrics & Reproductive,Self-Consistency,11,6,0.5454545454545454
+Obstetrics & Reproductive,1 agent + judge,11,6,0.5454545454545454
+Obstetrics & Reproductive,2 agents + judge,11,5,0.45454545454545453
+Obstetrics & Reproductive,3 agents + judge,11,5,0.45454545454545453
+Pharmacology & Toxicology,Direct baseline,7,3,0.42857142857142855
+Pharmacology & Toxicology,Structured prompting,7,3,0.42857142857142855
+Pharmacology & Toxicology,Critic-guided refinement,7,3,0.42857142857142855
+Pharmacology & Toxicology,Self-Consistency,7,3,0.42857142857142855
+Pharmacology & Toxicology,1 agent + judge,7,3,0.42857142857142855
+Pharmacology & Toxicology,2 agents + judge,7,3,0.42857142857142855
+Pharmacology & Toxicology,3 agents + judge,7,4,0.5714285714285714
+Renal & Urology,Direct baseline,8,3,0.375
+Renal & Urology,Structured prompting,8,3,0.375
+Renal & Urology,Critic-guided refinement,8,3,0.375
+Renal & Urology,Self-Consistency,8,3,0.375
+Renal & Urology,1 agent + judge,8,5,0.625
+Renal & Urology,2 agents + judge,8,3,0.375
+Renal & Urology,3 agents + judge,8,3,0.375
+"Research, Ethics & Health Policy",Direct baseline,6,1,0.16666666666666666
+"Research, Ethics & Health Policy",Structured prompting,6,2,0.3333333333333333
+"Research, Ethics & Health Policy",Critic-guided refinement,6,4,0.6666666666666666
+"Research, Ethics & Health Policy",Self-Consistency,6,1,0.16666666666666666
+"Research, Ethics & Health Policy",1 agent + judge,6,2,0.3333333333333333
+"Research, Ethics & Health Policy",2 agents + judge,6,2,0.3333333333333333
+"Research, Ethics & Health Policy",3 agents + judge,6,1,0.16666666666666666

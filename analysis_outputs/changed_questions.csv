@@ -1,0 +1,106 @@
+Question_Number,Method,Direction,Baseline_Pred,Method_Pred,Correct
+14,Structured prompting,Corrected baseline error,A,D,D
+17,Structured prompting,Changed correct baseline answer to wrong,D,B,D
+19,Structured prompting,Changed correct baseline answer to wrong,A,B,A
+27,Structured prompting,Corrected baseline error,C,A,A
+29,Structured prompting,Changed correct baseline answer to wrong,B,D,B
+30,Structured prompting,Corrected baseline error,B,A,A
+44,Structured prompting,Corrected baseline error,C,A,A
+45,Structured prompting,Corrected baseline error,A,B,B
+48,Structured prompting,Corrected baseline error,B,D,D
+55,Structured prompting,Corrected baseline error,E,D,D
+58,Structured prompting,Changed correct baseline answer to wrong,B,A,B
+67,Structured prompting,Corrected baseline error,D,A,A
+78,Structured prompting,Corrected baseline error,B,D,D
+80,Structured prompting,Corrected baseline error,C,B,B
+91,Structured prompting,Changed correct baseline answer to wrong,C,B,C
+95,Structured prompting,Corrected baseline error,D,B,B
+97,Structured prompting,Corrected baseline error,B,A,A
+99,Structured prompting,Corrected baseline error,A,C,C
+19,Critic-guided refinement,Changed correct baseline answer to wrong,A,B,A
+20,Critic-guided refinement,Corrected baseline error,C,D,D
+24,Critic-guided refinement,Corrected baseline error,B,D,D
+27,Critic-guided refinement,Corrected baseline error,C,A,A
+30,Critic-guided refinement,Corrected baseline error,B,A,A
+34,Critic-guided refinement,Corrected baseline error,C,A,A
+44,Critic-guided refinement,Corrected baseline error,C,A,A
+45,Critic-guided refinement,Corrected baseline error,A,B,B
+51,Critic-guided refinement,Corrected baseline error,B,A,A
+78,Critic-guided refinement,Corrected baseline error,B,D,D
+81,Critic-guided refinement,Corrected baseline error,C,D,D
+83,Critic-guided refinement,Corrected baseline error,B,A,A
+84,Critic-guided refinement,Corrected baseline error,A,C,C
+87,Critic-guided refinement,Corrected baseline error,D,B,B
+90,Critic-guided refinement,Changed correct baseline answer to wrong,A,B,A
+91,Critic-guided refinement,Changed correct baseline answer to wrong,C,B,C
+95,Critic-guided refinement,Corrected baseline error,D,B,B
+97,Critic-guided refinement,Corrected baseline error,B,A,A
+99,Critic-guided refinement,Corrected baseline error,A,C,C
+100,Critic-guided refinement,Corrected baseline error,C,D,D
+14,Self-Consistency,Corrected baseline error,A,D,D
+19,Self-Consistency,Changed correct baseline answer to wrong,A,D,A
+26,Self-Consistency,Corrected baseline error,B,C,C
+27,Self-Consistency,Corrected baseline error,C,A,A
+48,Self-Consistency,Corrected baseline error,B,D,D
+67,Self-Consistency,Corrected baseline error,D,A,A
+84,Self-Consistency,Corrected baseline error,A,C,C
+95,Self-Consistency,Corrected baseline error,D,B,B
+97,Self-Consistency,Corrected baseline error,B,A,A
+100,Self-Consistency,Corrected baseline error,C,D,D
+14,1 agent + judge,Corrected baseline error,A,D,D
+19,1 agent + judge,Changed correct baseline answer to wrong,A,B,A
+23,1 agent + judge,Changed correct baseline answer to wrong,B,C,B
+27,1 agent + judge,Corrected baseline error,C,A,A
+30,1 agent + judge,Corrected baseline error,B,A,A
+37,1 agent + judge,Changed correct baseline answer to wrong,D,C,D
+42,1 agent + judge,Corrected baseline error,B,C,C
+44,1 agent + judge,Corrected baseline error,C,A,A
+48,1 agent + judge,Corrected baseline error,B,D,D
+52,1 agent + judge,Corrected baseline error,B,D,D
+56,1 agent + judge,Corrected baseline error,D,C,C
+60,1 agent + judge,Corrected baseline error,A,D,D
+65,1 agent + judge,Changed correct baseline answer to wrong,B,D,B
+67,1 agent + judge,Corrected baseline error,D,A,A
+74,1 agent + judge,Changed correct baseline answer to wrong,C,B,C
+78,1 agent + judge,Corrected baseline error,B,D,D
+80,1 agent + judge,Corrected baseline error,C,B,B
+84,1 agent + judge,Corrected baseline error,A,C,C
+95,1 agent + judge,Corrected baseline error,D,B,B
+97,1 agent + judge,Corrected baseline error,B,A,A
+99,1 agent + judge,Corrected baseline error,A,C,C
+100,1 agent + judge,Corrected baseline error,C,D,D
+14,2 agents + judge,Corrected baseline error,A,D,D
+19,2 agents + judge,Changed correct baseline answer to wrong,A,D,A
+23,2 agents + judge,Changed correct baseline answer to wrong,B,D,B
+27,2 agents + judge,Corrected baseline error,C,A,A
+30,2 agents + judge,Corrected baseline error,B,A,A
+44,2 agents + judge,Corrected baseline error,C,A,A
+48,2 agents + judge,Corrected baseline error,B,D,D
+65,2 agents + judge,Changed correct baseline answer to wrong,B,D,B
+67,2 agents + judge,Corrected baseline error,D,A,A
+74,2 agents + judge,Changed correct baseline answer to wrong,C,B,C
+78,2 agents + judge,Corrected baseline error,B,D,D
+79,2 agents + judge,Corrected baseline error,D,C,C
+80,2 agents + judge,Corrected baseline error,C,B,B
+84,2 agents + judge,Corrected baseline error,A,C,C
+95,2 agents + judge,Corrected baseline error,D,B,B
+97,2 agents + judge,Corrected baseline error,B,A,A
+99,2 agents + judge,Corrected baseline error,A,C,C
+100,2 agents + judge,Corrected baseline error,C,D,D
+14,3 agents + judge,Corrected baseline error,A,D,D
+23,3 agents + judge,Changed correct baseline answer to wrong,B,D,B
+27,3 agents + judge,Corrected baseline error,C,A,A
+30,3 agents + judge,Corrected baseline error,B,A,A
+44,3 agents + judge,Corrected baseline error,C,A,A
+45,3 agents + judge,Corrected baseline error,A,B,B
+58,3 agents + judge,Changed correct baseline answer to wrong,B,A,B
+65,3 agents + judge,Changed correct baseline answer to wrong,B,D,B
+67,3 agents + judge,Corrected baseline error,D,A,A
+78,3 agents + judge,Corrected baseline error,B,D,D
+84,3 agents + judge,Corrected baseline error,A,C,C
+88,3 agents + judge,Corrected baseline error,D,B,B
+93,3 agents + judge,Changed correct baseline answer to wrong,C,D,C
+95,3 agents + judge,Corrected baseline error,D,B,B
+97,3 agents + judge,Corrected baseline error,B,A,A
+99,3 agents + judge,Corrected baseline error,A,C,C
+100,3 agents + judge,Corrected baseline error,C,D,D

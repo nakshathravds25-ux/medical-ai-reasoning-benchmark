@@ -1,0 +1,10 @@
+Reference,Comparison,Wrong_to_Correct,Correct_to_Wrong,Net_Correct_Change,P_Exact,P_Holm_6,Family,P_Holm_3
+Baseline,Structured,13,5,8,0.09625244140625,0.09808349609375,Six comparisons vs baseline,
+Baseline,Critic,17,3,14,0.0025768280029296875,0.015460968017578125,Six comparisons vs baseline,
+Baseline,SelfConsistency,9,1,8,0.021484375,0.0859375,Six comparisons vs baseline,
+Baseline,Judge1,17,5,12,0.01690053939819336,0.0845026969909668,Six comparisons vs baseline,
+Baseline,Judge2,14,4,10,0.0308837890625,0.0926513671875,Six comparisons vs baseline,
+Baseline,Judge3,13,4,9,0.049041748046875,0.09808349609375,Six comparisons vs baseline,
+Judge1,Judge2,2,4,-2,0.6875,,Three exploratory agent-count contrasts,1.0
+Judge2,Judge3,4,5,-1,1.0,,Three exploratory agent-count contrasts,1.0
+Judge1,Judge3,5,8,-3,0.5810546875,,Three exploratory agent-count contrasts,1.0
