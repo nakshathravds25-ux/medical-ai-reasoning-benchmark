@@ -13,3 +13,5 @@ matplotlib
 tabulate
 ipykernel
 IPython
+streamlit
+plotly
