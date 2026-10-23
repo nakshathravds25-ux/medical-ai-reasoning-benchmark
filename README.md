@@ -31,6 +31,10 @@ The interactive dashboard includes:
 
 The dashboard uses saved experimental results. **No login, Groq API key, or paid inference is required.**
 
+### Dashboard Preview
+
+![Medical AI Dashboard](assets/dashboard.png)
+
 ## Key Experimental Findings
 
 | Reasoning configuration | Correct / 90 | Accuracy | Mean tokens / question |
