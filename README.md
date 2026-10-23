@@ -1,147 +1,252 @@
 # Evaluating Multi-Agent Reasoning Strategies for Complex Medical Question Answering
 
-**MSc Data Science & BioAI capstone**  
-**Benchmark:** MedicalAgentsBench — `MedQA`, `test_hard`  
-**Formal evaluation:** 90 questions, Q11–Q100 (the first ten questions were used for pilots)  
-**Underlying model:** `openai/gpt-oss-120b` accessed through Groq
+**MSc Data Science & BioAI Capstone** | Python · Generative AI · LLM Evaluation · Medical QA
 
-## Project overview
+[**🚀 Launch the Interactive Dashboard**](https://medical-ai-reasoning-benchmark-utzldf5dhvbbwyrdp59fmu.streamlit.app/) · [**View Research Results**](analysis_outputs/analysis_report.md)
 
-This project compares seven inference-time reasoning configurations on the **same 90 medical multiple-choice questions**. It examines whether additional reasoning, review, or multiple agents improve answer accuracy and whether the improvement justifies the extra API calls, tokens, and latency.
+> A reproducible comparison of seven LLM reasoning configurations on 90 challenging medical multiple-choice questions. The dashboard explores saved experimental results and **does not make model API calls**.
 
-The experiments are **complete**. You can reproduce the statistical analysis and figures using the existing CSV files **without a Groq API key or any new model calls**.
+## Project Overview
 
-### Evaluated approaches
+Can structured prompting, answer refinement, repeated sampling, or additional agents improve medical question-answering accuracy—and are the gains worth the extra computation?
 
-| Configuration | What was actually implemented | LLM calls / question |
+This project evaluates seven configurations on the **same 90 questions (Q11–Q100)** from the **MedicalAgentsBench** `MedQA` / `test_hard` subset. Questions Q1–Q10 were used during preliminary pilots and excluded from the formal comparison.
+
+- **Model:** `openai/gpt-oss-120b` via Groq
+- **Evaluation:** Accuracy, agreement, error correction, 95% confidence intervals, paired McNemar tests, token usage, and API latency
+- **Category analysis:** 11 provisional, AI-assisted medical specialty categories
+- **Application:** A read-only Streamlit dashboard for exploring the results
+
+## Live Interactive Dashboard
+
+**[🌐 Open the Medical AI Reasoning Dashboard](https://medical-ai-reasoning-benchmark-utzldf5dhvbbwyrdp59fmu.streamlit.app/)**
+
+The interactive dashboard includes:
+
+- Overall accuracy comparison across seven reasoning configurations
+- Agent-count and computational-cost analysis
+- Medical-category accuracy heatmap
+- Question-level prediction and error explorer
+- Statistical findings and methodology notes
+
+The dashboard uses saved experimental results. **No login, Groq API key, or paid inference is required.**
+
+## Key Experimental Findings
+
+| Reasoning configuration | Correct / 90 | Accuracy | Mean tokens / question |
+|---|---:|---:|---:|
+| Direct baseline | 34 | 37.8% | 439 |
+| Structured prompting | 42 | 46.7% | 488 |
+| **Critic-guided refinement** | **48** | **53.3%** | **1,010** |
+| Self-Consistency (3 samples) | 42 | 46.7% | 1,497 |
+| 1 specialist + judge | 46 | 51.1% | 1,021 |
+| 2 specialists + judge | 44 | 48.9% | 1,544 |
+| 3 specialists + judge | 43 | 47.8% | 2,029 |
+
+### Main Findings
+
+**1. Critic-guided refinement achieved the highest observed accuracy.**
+
+Accuracy improved from 37.8% for direct answering to 53.3%, representing an increase of approximately **15.6 percentage points**.
+
+The improvement remained statistically significant after Holm correction for six paired baseline comparisons (adjusted **p ≈ 0.0155**).
+
+**2. Increasing the number of agents did not improve observed accuracy.**
+
+The one-agent-plus-judge configuration achieved 51.1% accuracy, compared with 48.9% and 47.8% for two-agent and three-agent configurations. However, these differences were not statistically significant.
+
+**3. Self-Consistency provided limited additional benefit.**
+
+Majority voting achieved 42/90 correct answers, compared with 41/90 using the first sampled answer alone, despite requiring three calls per question.
+
+**4. Additional computation did not guarantee better performance.**
+
+More complex configurations consumed additional tokens and API processing time without consistently improving accuracy.
+
+For detailed statistical comparisons and methodological qualifications, see [`analysis_outputs/analysis_report.md`](analysis_outputs/analysis_report.md).
+
+## Research Visualizations
+
+### Overall Accuracy Comparison
+
+![Accuracy comparison with 95% confidence intervals](analysis_outputs/figures/01_accuracy_with_CI.png)
+
+### Additional Figures
+
+- [Error Correction and Regression](analysis_outputs/figures/02_corrected_and_worsened.png)
+- [Agent Count and Computational Cost](analysis_outputs/figures/03_agent_count_and_cost.png)
+- [Accuracy vs Token Usage](analysis_outputs/figures/04_accuracy_vs_tokens.png)
+- [Self-Consistency Answer Agreement](analysis_outputs/figures/05_self_consistency_agreement.png)
+- [Medical Category Accuracy Heatmap](analysis_outputs/figures/06_medical_category_accuracy.png)
+
+## Methodology
+
+Seven experimental configurations were implemented using the same underlying LLM.
+
+| Configuration | Implementation | LLM calls/question |
 |---|---|---:|
-| Direct baseline | One model answer, no extra review | 1 |
-| Structured prompting | Prompt asks model to consider evidence and alternatives; only the final answer is recorded | 1 |
-| Critic-guided refinement | A separate call reviews the saved baseline answer and returns a revised answer | 2 total, including baseline |
-| Self-Consistency | Three independently sampled final answers and majority voting | 3 |
-| 1 specialist + judge | One independent candidate answer, then a judge | 2 |
-| 2 specialists + judge | Two independent candidate answers, then a judge | 3 |
-| 3 specialists + judge | Three independent candidate answers, then a judge | 4 |
+| Direct baseline | Single model prediction | 1 |
+| Structured prompting | Guided evidence evaluation and elimination of alternatives | 1 |
+| Critic-guided refinement | One additional call reviews and may revise the saved baseline answer | 2 total |
+| Self-Consistency | Three independently sampled answers, combined using majority voting | 3 |
+| 1 specialist + judge | One independent candidate answer followed by an LLM judge | 2 |
+| 2 specialists + judge | Two candidate answers followed by an LLM judge | 3 |
+| 3 specialists + judge | Three candidate answers followed by an LLM judge | 4 |
 
-All configurations use the same underlying model. Structured prompting is **not** a recorded full chain-of-thought trace; the multi-agent approach uses **candidate answers plus a judge**, not multi-round debate. The specialist candidates are reused across the agent-count configurations.
+The Self-Consistency experiment used the first sample to break three-way ties.
 
-## Findings from the saved 90-question results
+Structured prompting encouraged deliberate consideration but did not record a complete Chain-of-Thought trace.
 
-| Approach | Correct / 90 | Accuracy |
-|---|---:|---:|
-| Direct baseline | 34 | 37.8% |
-| Structured prompting | 42 | 46.7% |
-| Critic-guided refinement | 48 | **53.3%** |
-| Self-Consistency | 42 | 46.7% |
-| 1 specialist + judge | 46 | 51.1% |
-| 2 specialists + judge | 44 | 48.9% |
-| 3 specialists + judge | 43 | 47.8% |
+The multi-agent system implemented **independent answer aggregation with LLM judging**, rather than multi-round agent debate. Expert predictions were reused across the judge configurations.
 
-Critic-guided refinement has the highest observed accuracy. Its improvement over baseline survives Holm correction of six paired comparisons (adjusted **p ≈ 0.0155**). The agent-count differences are not statistically significant; more agents did not increase observed accuracy within this implementation. See `analysis_outputs/analysis_report.md` for the details and qualifications.
-
-## Repository layout
+## Repository Structure
 
 ```text
-Medical_AI_Capstone/
-├── Medical_QA_Final_Analysis.ipynb     # Analysis and figure generation (run this)
-├── formal_baseline_results.csv         # 90 formal baseline responses
-├── structured_reasoning_results.csv    # 90 structured prompt responses
-├── critic_results.csv                  # 90 review/refinement responses
-├── self_consistency_samples.csv        # 270 samples: 3 per question
-├── multi_agent_results.csv             # 540 stages: 6 per question
-├── medical_questions_90.csv            # Q11–Q100 texts, options and identifiers
-├── question_categories.csv             # Reviewed, provisional AI-assisted labels
-├── question_categories_original.csv    # Original labeling snapshot
-├── medical_category_codebook.md        # Classification definitions
-├── category_label_review.csv           # Category review record
-├── category_review_guide.md            # Ambiguities and review notes
-├── medical_qa_qualitative_review.md    # Selected cases and visual limitations
-├── analysis_outputs/
-│   ├── analysis_report.md
-│   ├── method_summary.csv
-│   ├── paired_mcnemar_tests.csv
-│   ├── question_level_results.csv
-│   ├── changed_questions.csv
-│   ├── medical_category_accuracy.csv
-│   └── figures/                      # Six PNG research figures
-├── baseline_research.py                # Formal baseline collection script
+medical-ai-reasoning-benchmark/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── Medical_QA_Final_Analysis.ipynb
+│
+├── baseline_research.py
 ├── structured_reasoning.py
 ├── critic_refinement.py
 ├── self_consistency.py
 ├── multi_agent_experiment.py
-├── auto_run_capstone.py                # Optional API-based checkpoint runner
-├── export_medical_questions_90.py     # Question export from Hugging Face
-├── baseline.py, baseline_batch.py      # Early pilots
-└── requirements.txt                   # Python dependencies
+│
+├── formal_baseline_results.csv
+├── structured_reasoning_results.csv
+├── critic_results.csv
+├── self_consistency_samples.csv
+├── multi_agent_results.csv
+│
+├── question_categories.csv
+│
+└── analysis_outputs/
+    ├── analysis_report.md
+    ├── method_summary.csv
+    ├── paired_mcnemar_tests.csv
+    ├── question_level_results.csv
+    ├── changed_questions.csv
+    ├── medical_category_accuracy.csv
+    │
+    └── figures/
+        ├── 01_accuracy_with_CI.png
+        ├── 02_corrected_and_worsened.png
+        ├── 03_agent_count_and_cost.png
+        ├── 04_accuracy_vs_tokens.png
+        ├── 05_self_consistency_agreement.png
+        └── 06_medical_category_accuracy.png
 ```
 
-Other exploratory scripts may also remain in the folder. Some experiment scripts contain the **final continuation ranges**, not the original starting ranges; do not interpret their current `START` setting as the entire experiment's scope. The complete Q11–Q100 results are stored in the CSVs.
+The full exported medical question-text CSV is not included in the public repository. The original benchmark is available through Hugging Face.
 
-## Reproduce the analysis (no paid service or API key required)
+Some experiment scripts reflect their last resumed question ranges. The complete formal evaluation results are preserved in the saved CSV files.
 
-These instructions assume **Windows PowerShell** and Python 3.13 (the development environment used for this project).
+## Installation and Local Setup
 
-1. Open the `Medical_AI_Capstone` directory in VS Code.
-2. Activate the project's existing virtual environment:
+### Prerequisites
 
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
+- Python 3.13 (used during development)
+- Git
+- VS Code or another Python development environment
 
-   If there is no `.venv`, create one and activate it:
-
-   ```powershell
-   py -3 -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ```
-
-3. Install dependencies:
-
-   ```powershell
-   python -m pip install -r requirements.txt
-   ```
-
-4. Open `Medical_QA_Final_Analysis.ipynb` in VS Code. Select the `.venv` Jupyter kernel (install Microsoft's **Python** and **Jupyter** extensions if requested), then choose **Run All**.
-5. Read `analysis_outputs/analysis_report.md` and inspect `analysis_outputs/figures/`.
-
-The notebook reads the five experiment CSVs, checks their coverage/keys, computes method statistics and paired comparisons, and writes results to `analysis_outputs/`. It also generates the category heatmap when `question_categories.csv` is available. **It does not send requests to Groq or re-generate model answers.**
-
-### Verify experiment checkpoint counts without API requests
+### 1. Clone the repository
 
 ```powershell
-python auto_run_capstone.py --check
+git clone https://github.com/nakshathravds25-ux/medical-ai-reasoning-benchmark.git
+
+cd medical-ai-reasoning-benchmark
 ```
 
-This displays completeness counts for critic, Self-Consistency, and multi-agent records, using the two other experiment CSVs as references. **Do not run** `python auto_run_capstone.py` **without `--check`** unless you specifically intend to execute unfinished model experiments: that mode can make Groq API calls.
+### 2. Create a virtual environment
 
-## Re-running model experiments (optional; not necessary for this capstone)
+```powershell
+py -3 -m venv .venv
 
-The original collection scripts use the Hugging Face `super-dainiu/medagents-benchmark` dataset (`MedQA`, `test_hard`) and Groq's `openai/gpt-oss-120b` model. A Groq key would be supplied locally in a `.env` file:
-
-```text
-GROQ_API_KEY=your_key_here
+.\.venv\Scripts\Activate.ps1
 ```
 
-**Never commit, upload, or share `.env` or an API key.** The `.env` and `.venv` paths should remain in `.gitignore`. The study's existing responses are already saved, so re-running is unnecessary and may incur usage or rate limits. Do not overwrite the existing CSVs.
+### 3. Install dependencies
 
-## Statistical and methodological notes
+```powershell
+python -m pip install -r requirements.txt
+```
 
-- Accuracy is computed on the same **90** questions for every configuration.
-- Confidence intervals are **95% Wilson intervals**; paired accuracy comparisons use **exact McNemar tests**, with Holm adjustments for families of comparisons.
-- Self-Consistency uses a first-sample tie-break when all three answers differ; this rule matters for interpretation.
-- Token totals and accumulated API response durations estimate computational cost; they **exclude** explicit sleeps, rate-limit waits, and end-to-end operational overhead.
-- Category labels are **AI-assisted and provisional**, not clinician-validated ground truth. Category subgroup results have small sample sizes and are exploratory.
-- Some question stems refer to unavailable medical images. **Q55 is particularly ambiguous:** an option-letter/text mismatch can make an `E` response invalid against the benchmark answer key `D`. Saved scoring is preserved rather than retrospectively changed.
-- The 90-question MedQA sample is **not** the full MedicalAgentsBench benchmark. Results do not demonstrate clinical safety, diagnostic validity, or a general causal effect of adding agents.
-- The scripts and stored answer letters do not allow auditing complete internal model reasoning. Document exact prompt and run settings before claiming a fully independent replication.
+### 4. Run the Streamlit dashboard
 
-## Main outputs for the final MSc report
+```powershell
+python -m streamlit run app.py
+```
 
-Use the saved `analysis_outputs` CSV tables and six PNG figures (overall accuracy, error correction/regression, agent count versus cost, accuracy versus tokens, Self-Consistency agreement, and medical category heatmap). The report's discussion should distinguish statistically supported conclusions from exploratory patterns.
+Open the local address displayed in the terminal, typically:
 
-## Source and attribution
+`http://localhost:8501`
 
-- Benchmark: [MedicalAgentsBench on Hugging Face](https://huggingface.co/datasets/super-dainiu/medagents-benchmark).
-- Evaluation was carried out solely as a research comparison of multiple-choice predictions; **not** as a clinical decision-support system.
+The dashboard loads saved experimental results and does not require a Groq API key.
 
-*Documentation reflects the uploaded project snapshot; it is not a claim that every experiment can be rerun identically from the saved continuation scripts alone.*
+## Reproduce the Statistical Analysis
+
+The main analysis notebook is:
+
+`Medical_QA_Final_Analysis.ipynb`
+
+To reproduce the statistical analysis:
+
+1. Open the notebook in VS Code or Jupyter.
+2. Select the project's Python environment.
+3. Run all notebook cells.
+4. Examine the generated tables and figures inside `analysis_outputs/`.
+
+The notebook uses the five saved experimental CSV files to calculate accuracy, confidence intervals, paired comparisons, consistency, and computational-cost metrics.
+
+**No additional model inference or API calls are required.**
+
+The original model-collection scripts are included for transparency. Their saved continuation settings do not, by themselves, provide a complete one-command reproduction of all model inference.
+
+## Statistical Analysis
+
+The study used:
+
+- Accuracy and 95% Wilson confidence intervals
+- Exact McNemar tests for paired comparisons
+- Holm correction for multiple comparisons
+- Baseline error-correction and regression analysis
+- Self-Consistency answer agreement
+- Token consumption and cumulative API response-time comparison
+- Exploratory medical question-category accuracy analysis
+
+All seven configurations were evaluated against the same 90-question reference set.
+
+## Limitations
+
+- The evaluation used 90 questions from one MedQA subset rather than the full MedicalAgentsBench benchmark.
+- All configurations used a single underlying LLM.
+- Intermediate reasoning traces were not systematically recorded or validated.
+- The multi-agent framework aggregated independent candidate answers rather than implementing multi-round debate.
+- Medical-category labels were AI-assisted and provisional rather than independently clinician-validated.
+- Some questions referenced medical images unavailable to the text-only inputs.
+- A formatting ambiguity in Q55 was retained in the original benchmark scoring.
+- Token usage and API response times were used as computational-cost proxies, excluding rate-limit waits and intentional delays.
+
+The results describe benchmark-based multiple-choice performance and **do not establish clinical reliability, diagnostic safety, or suitability for clinical deployment**.
+
+## Dataset and Attribution
+
+**MedicalAgentsBench**
+
+Hugging Face dataset: [super-dainiu/medagents-benchmark](https://huggingface.co/datasets/super-dainiu/medagents-benchmark)
+
+Subset: `MedQA`
+
+Split: `test_hard`
+
+Formal evaluation: Q11–Q100 (90 questions)
+
+## Project Purpose
+
+This project was developed as an MSc Data Science & BioAI research capstone to investigate the effectiveness and computational efficiency of LLM-based reasoning and multi-agent approaches for complex medical question answering.
+
+The application is intended for **research and educational evaluation only**, not medical advice or clinical decision support.
